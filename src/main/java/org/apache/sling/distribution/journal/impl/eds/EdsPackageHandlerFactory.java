@@ -24,7 +24,7 @@ import org.apache.sling.distribution.journal.bookkeeper.PackageHandlerFactory;
 import org.apache.sling.distribution.packaging.DistributionPackageBuilder;
 import org.osgi.service.component.annotations.Component;
 
-@Component(service = PackageHandlerFactory.class, name = "edge-delivery")
+@Component(immediate = true, service = PackageHandlerFactory.class, property = { "name=edge-delivery" })
 public class EdsPackageHandlerFactory implements PackageHandlerFactory {
     @Override
     public PackageHandler create(DistributionPackageBuilder packageBuilder, ContentPackageExtractor extractor) {

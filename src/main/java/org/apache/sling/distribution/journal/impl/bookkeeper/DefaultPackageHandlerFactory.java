@@ -26,7 +26,7 @@ import org.apache.sling.distribution.packaging.DistributionPackageBuilder;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
-@Component(service = PackageHandlerFactory.class, name = "default")
+@Component(immediate = true, service = PackageHandlerFactory.class, property = { "name=default" })
 public class DefaultPackageHandlerFactory implements PackageHandlerFactory {
 
     @Reference
